@@ -326,7 +326,7 @@ endif ()
 # libflang_rt.runtime when the OpenMP runtime is also being built.
 # Skip for GPU-default targets: omp_lib is a host-side Fortran module.
 if (TARGET libomp-mod AND NOT "${LLVM_DEFAULT_TARGET_TRIPLE}" MATCHES "^amdgcn|^nvptx"
-    AND NOT FLANG_RT_EXPERIMENTAL_OFFLOAD_SUPPORT STREQUAL "CUDA")
+     AND NOT FLANG_RT_EXPERIMENTAL_OFFLOAD_SUPPORT STREQUAL "CUDA")
   list(APPEND sources "$<TARGET_OBJECTS:libomp-mod>")
 endif ()
 
